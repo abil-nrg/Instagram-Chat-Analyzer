@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.cloudWrapper {
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  background: #fafafa;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.empty {
+  color: #777;
+  font-style: italic;
+}
