@@ -36,7 +36,9 @@ This project has three components: Front End, Back End Infra, Analysis Logic.
 Worked on the Front-End  
 [Ngan](https://github.com/nlhngan)  
 Worked on the Flask End-Points and Business Logic  
-[Khnanh](https://github.com/Khanh150104)  
+
+[Khanh](https://github.com/Khanh150104)  
 Worked on Analysis Logic  
 [Abil]()  
 Worked on Analysis Logic  
+
