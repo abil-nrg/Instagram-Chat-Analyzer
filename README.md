@@ -20,11 +20,30 @@ Giving the user the ability to reflect on the conversations they spend time on.
 
 ## Quick Start
 Install our dependencies, by 
-```python3
+
+``` bash
 python -m venv venv
 source venv/bin/activate
 pip3 -r requirements.txt
 ```
+
+### Flask App:
+``` bash
+cd dev
+python3 app.py
+```
+
+### NextJs App
+``` bash
+cd client
+npm i react-d3-cloud --legacy-peer-deps
+npm i
+```
+
+``` bash
+npm run dev
+```
+
 Then go to instagram webiste and [ADD HERE LATER]
 
 ## Tech Stack  
