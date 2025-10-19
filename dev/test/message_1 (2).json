@@ -1,0 +1,25 @@
+{
+  "participants": [
+    {
+      "name": "Kaitlyn\u00f0\u009f\u0091\u0091"
+    },
+    {
+      "name": "abil"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "Kaitlyn\u00f0\u009f\u0091\u0091",
+      "timestamp_ms": 1732943407984,
+      "content": "Matt is looking for parking he forgot his credit card to pay",
+      "is_geoblocked_for_viewer": false,
+      "is_unsent_image_by_messenger_kid_parent": false
+    }
+  ],
+  "title": "Kaitlyn\u00f0\u009f\u0091\u0091",
+  "is_still_participant": true,
+  "thread_path": "inbox/kaitlyn_1612256896841640",
+  "magic_words": [
+    
+  ]
+}
