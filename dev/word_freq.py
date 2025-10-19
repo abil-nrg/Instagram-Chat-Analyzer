@@ -5,6 +5,7 @@ import re
 import pandas as pd
 from collections import Counter
 import string
+
 def word_frequency(conversations: dict, targetWord: str):
     targetWord = targetWord.lower().strip()
     word_count = {}
@@ -56,3 +57,4 @@ def top_word_per_user(conversation: dict, user: str, top_n: int = 10):
     return dict(counter.most_common(top_n))
 
 
+    return word_count
