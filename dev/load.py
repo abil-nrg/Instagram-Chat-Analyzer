@@ -20,7 +20,7 @@ def parse_json(json_str: str):
     Parse a json string into a dataframe
     """
 
-    raw_data = json.load(json_str)
+    raw_data = json.loads(json_str)
     
     messages = pd.DataFrame(raw_data["messages"])
     participants = pd.DataFrame(raw_data["participants"])
