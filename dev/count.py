@@ -73,3 +73,31 @@ def total_msgs_recieved(msgs : pd.DataFrame, username : str):
     s = df.sum(numeric_only=True).to_frame().T
 
     return s.to_dict(orient="records")
+
+def get_activity_timeline(msgs : pd.DataFrame, username : str, io_type : str = "sent"):
+    """
+    Returns the activity timeline
+    """
+    if io_type == "sent":
+        msgs_sent = msgs[msgs['sender_name'] == username]
+    elif io_type == "recieved":
+        msgs_sent = msgs[msgs['sender_name'] != username]
+
+    df = count_msgs_io(msgs_sent)
+
+    df['month'] = df['date'].dt.to_period("M")
+
+    monthly_agg = df.groupby("month").agg({
+        "content_count" : 'mean',
+        "audio_files_count" : 'mean',
+        "share_count" : 'mean',
+        "photos_count" : 'mean', 
+        "videos_count" : 'mean',
+        "total" : 'mean'
+
+    })
+
+    monthly_agg.index = monthly_agg.index.to_timestamp()
+    monthly_agg.index = monthly_agg.index.strftime('%b-%Y')
+
+    return monthly_agg.reset_index().to_dict(orient="records")
