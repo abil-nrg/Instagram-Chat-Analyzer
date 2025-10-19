@@ -1,1 +1,5 @@
+Flask==3.0.3
+pandas==2.2.2
+textblob==0.17.1
+emoji==2.12.1
 
