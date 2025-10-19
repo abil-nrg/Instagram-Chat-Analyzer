@@ -1,8 +1,8 @@
 from flask import Flask
-from routes import init_routes
+from routes.upload import upload_bp
 
 app = Flask(__name__)
-init_routes(app)
+app.register_blueprint(upload_bp)
 
 if __name__ == "__main__":
     app.run(debug=True)
