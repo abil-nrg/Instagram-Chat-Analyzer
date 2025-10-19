@@ -24,7 +24,8 @@ def get_main_files():
         ptcpts_arr.append(participants)
 
     msgs = pd.concat(msgs_arr, axis = 1)
-
+    ptcpts = pd.concat(ptcpts_arr, axis = 1)
+    
     username = "DO HERE"
 
     totalMessagesSent = total_msgs_sent(msgs, username)
