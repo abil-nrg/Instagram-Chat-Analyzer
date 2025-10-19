@@ -2,7 +2,6 @@ import pandas as pd
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from routes import init_routes
 
 from load import parse_json
 from count import total_msgs_sent, total_msgs_recieved, get_activity_timeline
@@ -10,7 +9,6 @@ from count import total_msgs_sent, total_msgs_recieved, get_activity_timeline
 
 app = Flask(__name__)
 CORS(app, origins="http://localhost:3000")
-init_routes(app)
 
 @app.route('/api/upload', methods=['POST'])
 def get_main_files():
