@@ -5,6 +5,10 @@ def get_daily_counts(df : pd.DataFrame, field : str) -> pd.Series:
     """
     Daily messages in a df
     """
+    #make sure the field exists
+    if field not in df.columns:
+        return None
+    
     #get rid of all content rows which are empty to null
     df = df[df[field].notna() & (df[field].str.strip() != "")].copy()
     #define date
@@ -33,7 +37,9 @@ def count_msgs_io(msgs : pd.DataFrame):
     s_arr = []
     for f in fields:
         s = get_daily_counts(msgs, f)
-        s_arr.append(s)
+
+        if s is not None:
+            s_arr.append(s)
     
     df = (pd.concat(s_arr, axis = 1)
           .fillna(0)
@@ -86,16 +92,8 @@ def get_activity_timeline(msgs : pd.DataFrame, username : str, io_type : str = "
     df = count_msgs_io(msgs_sent)
 
     df['month'] = df['date'].dt.to_period("M")
-
-    monthly_agg = df.groupby("month").agg({
-        "content_count" : 'mean',
-        "audio_files_count" : 'mean',
-        "share_count" : 'mean',
-        "photos_count" : 'mean', 
-        "videos_count" : 'mean',
-        "total" : 'mean'
-
-    })
+    df = df.drop('date', axis=1)
+    monthly_agg = df.groupby("month").mean()
 
     monthly_agg.index = monthly_agg.index.to_timestamp()
     monthly_agg.index = monthly_agg.index.strftime('%b-%Y')

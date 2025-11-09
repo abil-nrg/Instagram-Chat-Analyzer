@@ -57,4 +57,3 @@ def top_word_per_user(conversation: dict, user: str, top_n: int = 10):
     return dict(counter.most_common(top_n))
 
 
-    return word_count
